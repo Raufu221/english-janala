@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Janala</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+        
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        html{
+            scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
+        }
+    </style>
+</head>
+<body>
+   
+    <header>
+        <section class="h-20 bg-[#C2EFF2] fixed top-0 w-full z-50 hidden" id="navbar" >
+            <div class="navbar flex justify-between py-5 px-5">
+                <div class="logo flex pl-5 ">
+                    <h1 class="font-bold text-xl">English </h1>
+                    <img src="./assets/logo.png"> 
+                    <h2 class="text-lg">জানালা</h2>
+                </div>
+                <div class="nav-btn">
+                    <a href="#faq" class=" btn btn-outline  btn-info text-[#422AD5]"><img src="./assets/fa-circle-question.png">FAQ</a>
+                    <a href="#learn" class="btn btn-outline btn-info text-[#422AD5]"><img src="./assets/fa-book-open.png">Learn</a>
+                    <a href="#logout" id="logout-btn" class="btn btn-outline btn-info text-[#422AD5]"><img src="./assets/fa-arrow-right-from-bracket.png">Logout</a>
+                </div>
+
+            </div>
+
+        </section>
+        <section class="m-15 mt-20" id="banner-section">
+            <div class="start grid grid-cols-2 gap-20">
+                <div class="login pr-20 place-content-center ">
+                    <p class="text-3xl font-bold"><span class=" text-[#00BCFF]">English</span> is Easy!!</p>
+                    <p class="text-lg/7 text-[#62748E] mt-2">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা 
+                        বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                    <div>
+                        <input id="username" type="text" placeholder="username" class="input my-6" />
+                        <input id="password" type="password" placeholder="password" class="input" />
+                        
+                    </div>  
+                    <button id="login-btn" class="btn bg-[#3D26C7] text-white p-4 my-6">Get started</button>  
+                    
+                </div>
+                <div class="person-img">
+                    <img src="./assets/hero-student.png">
+                </div>
+
+            </div>
+
+        </section>
+    </header>
+
+    <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_1.showModal()">open modal</button> -->
+<dialog id="worddetails" class="modal">
+  <div class="modal-box">
+    <div id="details_container"></div>
+    <div class="modal-action">
+      <form method="dialog">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn">Complete learning</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<!-- Reusable Alert Modal -->
+<dialog id="alert-modal" class="modal">
+  <div class="modal-box w-auto">
+    <p id="alert-message" class="py-4">Here is the alert message!</p>
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">OK</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+    
+    <section class="my-30 hidden" id="learn"> 
+        <div class="text-center">
+            <p class="text-xl font-bold"><span class=" text-[#00BCFF]">Let's</span> Learn Vocabularies</p>
+            <div class="btn-collection mt-6 flex justify-center gap-4 flex-wrap" id="vocabularies_container">
+            </div>
+            <div id="placeholder_text">
+            <p class="text-[#62748E] text-sm mt-10">আপনি এখনো কোন Lesson Select করেন ন</p>
+            <p class="text-base font-semibold">একটি Lesson Select করুন।</p>
+            </div>
+        </div>
+   <div class="bg-[#C6BDBD] rounded-lg max-w-7xl mx-auto my-10 p-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 hidden" id="lesson_container">
+      
+   </div>
+   <!-- <div class="col-span-full flex flex-col justify-center items-center text-center">
+    <img src="./assets/alert-error.png">
+    <p class="text-[#62748E] text-sm">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+    <h4 class="text-3xl font-bold mt-2">নেক্সট Lesson এ যান</h4>
+   </div> -->
+    </section>
+
+
+    <section class="m-15 mt-30 hidden" id="faq" >
+    <h1 class="text-center text-3xl font-bold mb-6"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</h1>
+
+        <details class="bg-gray-100 [open]:bg-white rounded-lg shadow-sm mb-4 transition-colors duration-300">
+            
+            
+            <summary class="list-none flex justify-between items-center p-6 font-semibold cursor-pointer">
+                
+                <span>1. What is the difference between var, let, and const?</span>
+               
+            </summary>
+            
+           
+            <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                <b>var</b> is the old way. It is function-scoped and can be re-declared, which can cause bugs.
+                <br>
+                <b>let</b> is the new way for variables that can change. It is block-scoped (stays inside its `{ }`) and cannot be re-declared.
+                <br>
+                <b>const</b> is for variables that *cannot* change (constants). It is also block-scoped and cannot be re-declared or updated.
+            </p>
+            
+        </details>
+        <details class="bg-gray-100 [open]:bg-white rounded-lg shadow-sm mb-4 transition-colors duration-300">
+            
+            
+            <summary class="list-none flex justify-between items-center p-6 font-semibold cursor-pointer">
+                
+                <span>2. What is the Difference between map(), forEach(), and filter()?</span>
+                
+            </summary>
+            
+           
+            <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                <b>forEach():</b> This just executes a function for each item in the array. It does not return anything. It's used when you want to do something (like print to the console or update a database) for each item.
+                <b>map(): </b> This transforms an array. It executes a function for each item and returns a new array of the same length with the results. (e.g., [1, 2, 3] -> [2, 4, 6])
+                <br>
+                <b>filter(): t</b> This selects items from an array. It executes a function that returns true or false for each item and returns a new array containing only the items that passed the test (returned true).
+            </p>
+            
+        </details>
+        <details class="bg-gray-100 [open]:bg-white rounded-lg shadow-sm mb-4 transition-colors duration-300">
+            
+            
+            <summary class="list-none flex justify-between items-center p-6 font-semibold cursor-pointer">
+                
+                <span>3. Arrow Functions vs. Regular Functions</span>
+                
+            </summary>
+            
+           
+            <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                <b>Regular Functions: </b> (e.g., function() { ... }) create their own this context. The value of this depends on how the function is called (e.g., as a method of an object, as a standalone function, etc.).
+                <br>
+                <b> Arrow Functions: </b>(e.g., () => { ... }) do not have their own this. They inherit the this value from their surrounding (lexical) scope. This makes them much more predictable, especially inside loops or callback functions. They are also shorter to write.
+                <br>
+                 
+            </p>
+            
+        </details>
+        <details class="bg-gray-100 [open]:bg-white rounded-lg shadow-sm mb-4 transition-colors duration-300">
+            
+            
+            <summary class="list-none flex justify-between items-center p-6 font-semibold cursor-pointer">
+                
+                <span>4. What is the difference between var, let, and const?</span>
+                
+            </summary>
+            
+           
+            <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                <b>var</b> is the old way. It is function-scoped and can be re-declared, which can cause bugs.
+                <br>
+                <b>let</b> is the new way for variables that can change. It is block-scoped (stays inside its `{ }`) and cannot be re-declared.
+                <br>
+                <b>const</b> is for variables that *cannot* change (constants). It is also block-scoped and cannot be re-declared or updated.
+            </p>
+            
+        </details>
+        <details class="bg-gray-100 [open]:bg-white rounded-lg shadow-sm mb-4 transition-colors duration-300">
+            
+            
+            <summary class="list-none flex justify-between items-center p-6 font-semibold cursor-pointer">
+                
+                <span>5. What is the difference between var, let, and const?</span>
+               
+            </summary>
+            
+           
+            <p class="p-6 pt-0 text-gray-600 leading-relaxed">
+                <b>var</b> is the old way. It is function-scoped and can be re-declared, which can cause bugs.
+                <br>
+                <b>let</b> is the new way for variables that can change. It is block-scoped (stays inside its `{ }`) and cannot be re-declared.
+                <br>
+                <b>const</b> is for variables that *cannot* change (constants). It is also block-scoped and cannot be re-declared or updated.
+            </p>
+            
+        </details>
+
+    </section>
+
+    <footer class="mt-40" id="footer-section">
+        <hr class="border-[#FFEBEB] mx-10">
+        <div class="grid grid-cols-2 gap-20 m-15">
+            <div>
+                <div class="logo flex  ">
+                    <h1 class="font-bold text-lg">English </h1>
+                    <img src="./assets/logo.png"> 
+                    <h2 class="text-base">জানালা</h2>
+                </div>
+                <p>ইংরেজি শিখুন সহজে</p>
+                <P class="text-xs">Providing ED-Tech Applications since 2025</P>
+            </div>
+            <div class=" mr-10">
+                <p class="text-right mb-3">follow us</p>
+                <div class="flex gap-2 justify-end ">
+                    <img src="./assets/fb-thumb.png">
+                    <img src="./assets/youtube-thumb.png">
+                    <img src="./assets/instagram-thumb.png">
+                    <img src="./assets/github-thumb.png">
+
+                </div>
+                
+            </div>
+
+
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+   <script src="app.js"></script>
+</body>
+</html>
