@@ -29,7 +29,7 @@ Since this is a static web application, you don't need to install any backend se
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/YOUR_USERNAME/english-janala.git](https://github.com/YOUR_USERNAME/english-janala.git)
+    git clone [https://github.com/Raufu221/english-janala.git](https://github.com/Raufu221/english-janala.git)
     ```
 2.  **Open the folder:**
     ```bash
@@ -41,5 +41,10 @@ Since this is a static web application, you don't need to install any backend se
 
 ## 📸 Screenshots
 
-<img width="1906" height="906" alt="Screenshot 2025-12-18 005406" src="https://github.com/user-attachments/assets/af82c42e-2a5c-4794-80a2-de212331fcc7" />
 
+
+<img width="1907" height="958" alt="Screenshot 2025-12-18 005235" src="https://github.com/user-attachments/assets/f57e197a-210c-4fcd-a21a-4aa4895c84a3" />
+<img width="1911" height="961" alt="Screenshot 2025-12-18 005302" src="https://github.com/user-attachments/assets/33543c8d-784f-4df7-96ce-a1487c516e99" />
+<img width="1908" height="923" alt="Screenshot 2025-12-18 005323" src="https://github.com/user-attachments/assets/a8293192-10f7-4d1c-bebe-9e8a7f03e0d9" />
+<img width="1882" height="903" alt="Screenshot 2025-12-18 005341" src="https://github.com/user-attachments/assets/3ee57f16-a295-4772-b4b9-0d960962922d" />
+<img width="1906" height="906" alt="Screenshot 2025-12-18 005406" src="https://github.com/user-attachments/assets/006fdad1-601e-4fcc-89e5-88acf4fbb8a7" />
